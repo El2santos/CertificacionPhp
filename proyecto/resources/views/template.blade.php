@@ -47,6 +47,9 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{url('/proveedores')}}">Proveedores</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{url('/empleados')}}">Empleados</a>
+                                    </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

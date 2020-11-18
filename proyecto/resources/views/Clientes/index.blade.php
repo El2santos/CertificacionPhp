@@ -21,6 +21,7 @@
         <th scope="col">Direccion</th>
         <th scope="col">Telefono</th>
         <th scope="col">Correo</th>
+        <th scope="col">Estado</th>
     </tr>
     </thead>
     <tbody>
@@ -33,12 +34,14 @@
     <td>{{$cliente->telefono}}</td>
     <td>{{$cliente->correo}}</td>
     <td>
+        <div class="row">
     <a href="{{url('/clientes/'.$cliente->id.'/edit')}}"  class="btn btn-info">Editar</a>||
     <form method="POST" action="{{url('/clientes/'.$cliente->id)}}">
     @csrf
     @method('DELETE')
     <button type="submit" onclick="return confirm('Borrar Cliente?');" class="btn btn-danger">Borrar</button>
     </form>
+</div>
     </td>
     <td>
 

@@ -26,8 +26,8 @@
         @foreach ($camiones as $camion)
         <tr>
     <td>{{$camion->id}}</td>
-    <td>{{$camion->nombre}}</td>
-    <td>{{$camion->placa}}</td>
+    <td>{{$camion->marca}}</td>
+    <td>{{$camion->placas}}</td>
     
     <td>
         <div class="row">

@@ -20,6 +20,7 @@ Auth::routes();
 Route::resource('clientes', 'ClientesController')->middleware('auth');
 Route::resource('proveedores', 'ProveedoresController')->middleware('auth');
 Route::resource('frutas', 'FrutaController')->middleware('auth');
+Route::resource('camiones', 'CamionesController')->middleware('auth');
 Route::resource('empleados', 'EmpleadosController')->middleware('auth');
 Route::get('/home', 'ClientesController@index')->middleware('auth');
 Route::get('/', 'ClientesController@index')->middleware('auth');

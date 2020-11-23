@@ -53,6 +53,9 @@
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{url('/camiones')}}">Camiones</a>
                                     </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{url('/compras')}}">Compras</a>
+                                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

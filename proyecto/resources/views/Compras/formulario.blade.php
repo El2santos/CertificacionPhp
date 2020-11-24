@@ -7,7 +7,7 @@ value="{{isset($buscarCompras->fecha)?$buscarCompras->fecha:''}}" required>
 </div>
 <div class="form-group">
     <label>Proveedor</label>
-    <select name="proveedor" id="proveedores" class="form-control">
+    <select name="proveedor" id="proveedor" class="form-control">
         <option value="" selected disabled>Seleccione un proveedor</option>
         @foreach($data as $proveedores)
         @if(isset($buscarCompra))
@@ -52,12 +52,12 @@ value="{{isset($buscarCompras->cantidad)?$buscarCompras->cantiadad:''}}" require
 
 <div class="form-group">
     <label>Costo</label>
-    <input type="number" class="form-control" name="costo" id="valor2" oninput="calcular()"  placeholder="Ingrese el costo por libra" 
+    <input type="double" class="form-control" name="costo" id="valor2" oninput="calcular()"  placeholder="Ingrese el costo por libra" 
 value="{{isset($buscarCompras->costo)?$buscarCompras->costo:''}}" required>
 </div>
 <div class="form-group">
     <label>total</label>
-    <input type="number" class="form-control" name="total" id="total"    
+    <input type="double" class="form-control" name="total" id="total"    
 value="{{isset($buscarCompras->total)?$buscarCompras->total:''}}" required>
 </div>
 

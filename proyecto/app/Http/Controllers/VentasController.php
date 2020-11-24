@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\compras;
+use App\ventas;
 use Illuminate\Http\Request;
 
-class ComprasController extends Controller
+class VentasController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,11 +15,10 @@ class ComprasController extends Controller
     public function index()
     {
         //
-        $datosf['compras']=\DB::select('select compras.id, compras.fecha, proveedores.nombre as proveedor, cantidad, costo, total, 
-        frutas.nombre as fruta from compras inner join frutas on compras.fruta=frutas.id inner join proveedores
-         on proveedores.id=compras.proveedor');
-        
-        return view('Compras.index' ,$datosf);
+        $datos['ventas']=\DB::select('select ventas.id, ventas.fecha, clientes.nombre as cliente, cantidad, precioventa, total, camion, 
+        frutas.nombre as fruta from ventas inner join frutas on ventas.fruta=frutas.id inner join clientes on
+        clientes.id=ventas.cliente');
+        return view('Ventas.index' ,$datos);
     }
 
     /**
@@ -30,10 +29,9 @@ class ComprasController extends Controller
     public function create()
     {
         //
-        $data['data']=\DB::table('proveedores')->get();
-        $dataf['dataf']=\DB::table('frutas')->get();
-        return view('compras.agregar',$data, $dataf);
-        
+        $datacliente['datacliente']=\DB::table('clientes')->get();
+        $datafruta['datafruta']=\DB::table('frutas')->get();
+        return view('ventas.agregar',$datacliente, $datafruta);
     }
 
     /**
@@ -45,18 +43,18 @@ class ComprasController extends Controller
     public function store(Request $request)
     {
         //
-        $datosCompras=request()->except('_token');
-        compras::insert($datosCompras);
-        return redirect('compras');
+        $datosVentas=request()->except('_token');
+        ventas::insert($datosVentas);
+        return redirect('ventas');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\compras  $compras
+     * @param  \App\ventas  $ventas
      * @return \Illuminate\Http\Response
      */
-    public function show(compras $compras)
+    public function show(ventas $ventas)
     {
         //
     }
@@ -64,41 +62,41 @@ class ComprasController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\compras  $compras
+     * @param  \App\ventas  $ventas
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         //
-        $buscarCompras=compras::findOrfail($id);
-        return view('compras.editar',compact('buscarCompras'));
+        $buscarVentas=ventas::findOrfail($id);
+        return view('ventas.editar',compact('buscarVentas'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\compras  $compras
+     * @param  \App\ventas  $ventas
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
         //
-        $datosCompras=request()->except(['_token','_method']);
-        compras::where('id','=',$id)->update($datosCompras);
-        return redirect('compras');
+        $datosVentas=request()->except(['_token','_method']);
+        ventas::where('id','=',$id)->update($datosVentas);
+        return redirect('ventas');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\compras  $compras
+     * @param  \App\ventas  $ventas
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
         //
-        compras::destroy($id);
-        return redirect('compras');
+        ventas::destroy($id);
+        return redirect('ventas');
     }
 }

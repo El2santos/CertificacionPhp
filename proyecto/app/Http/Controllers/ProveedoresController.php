@@ -16,8 +16,7 @@ class ProveedoresController extends Controller
     {
         //
         
-        $datos['proveedores']=\DB::select('select proveedores.id, proveedores.nombre, dpi, direccion, telefono, correo, 
-        frutas.nombre as fruta from proveedores inner join frutas on proveedores.fruta=frutas.id');
+        $datos['proveedores']=\DB::table('proveedores')->get();
         return view('Proveedores.index' ,$datos);
     }
 

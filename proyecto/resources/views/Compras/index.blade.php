@@ -18,7 +18,6 @@
         <th scope="col">Proveedor</th>
         <th scope="col">Fruta</th>
         <th scope="col">Cantidad</th>
-        <th scope="col">Unidad</th>
         <th scope="col">Costo</th>
         <th scope="col">Total</th>
         <th scope="col">Acciones</th>
@@ -32,7 +31,6 @@
     <td>{{$compra->proveedor}}</td>
     <td>{{$compra->fruta}}</td>
     <td>{{$compra->cantidad}}</td>
-    <td>{{$compra->unidad}}</td>
     <td>{{$compra->costo}}</td>
     <td>{{$compra->total}}</td>
     <td>

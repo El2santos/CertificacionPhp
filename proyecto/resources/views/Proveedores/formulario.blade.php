@@ -25,24 +25,6 @@ value="{{isset($buscarProveedor->telefono)?$buscarProveedor->telefono:''}}" requ
     <input type="text" class="form-control" name="correo"   placeholder="Ingrese el Correo" 
 value="{{isset($buscarProveedor->correo)?$buscarProveedor->correo:''}}" required>
 </div>
-<div class="form-group">
-    <label>fruta</label>
-    <select name="fruta" id="fruta" class="form-control">
-        <option value="" selected disabled>Seleccione una fruta</option>
-        @foreach($data as $fruta)
-        @if(isset($buscarProveedor))
-        @if($fruta->id==$buscarProveedor->fruta)
-        <option value="{{$fruta->id}}" selected>{{$fruta->nombre}}</option>
-        @else
-        <option value="{{$fruta->id}}">{{$fruta->nombre}}</option>
-        @endif
-        @else
-        <option value="{{$fruta->id}}">{{$fruta->nombre}}</option>
-        @endif
-        @endforeach
 
-    </select>
-
-</div>
 
 @stop

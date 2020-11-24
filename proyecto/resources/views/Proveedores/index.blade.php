@@ -19,7 +19,7 @@
         <th scope="col">Direccion</th>
         <th scope="col">Telefono</th>
         <th scope="col">Correo</th>
-        <th scope="col">fruta</th>
+        
         <th scope="col">acciones</th>
     </tr>
     </thead>
@@ -32,7 +32,7 @@
     <td>{{$proveedor->direccion}}</td>
     <td>{{$proveedor->telefono}}</td>
     <td>{{$proveedor->correo}}</td>
-    <td>{{$proveedor->fruta}}</td>
+    
     <td>
         <div class="row">
     <a href="{{url('/proveedores/'.$proveedor->id.'/edit')}}"  class="btn btn-info">Editar</a>| |
